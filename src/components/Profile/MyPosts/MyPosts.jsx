@@ -1,32 +1,24 @@
 import React from "react";
-import s from './Profile.module.css'
+import s from './MyPosts.module.css'
+import Post from "./Post/Post";
 
-const Profile = () => {
+const MyPosts = () => {
     return(
-        <div className={s.content}>
-            <img src="https://csialtd.com.au/wp-content/themes/csia/dist/img/header/placeholder/header1.jpg" alt=""/>
-            <div>
-                ava + description
-            </div>
             <div>
                 My post
                 <div>
                     New post
+                    <div>
+                        <textarea></textarea>
+                        <button>Add post</button>
+                    </div>
                 </div>
                 <div className={s.posts}>
-                    <div className={s.item}>
-                        post 1
-                    </div>
-                    <div className={s.item}>
-                        post 2
-                    </div>
-                    <div>
-                        post 3
-                    </div>
+                    <Post message='Hi, how are you' likesCount='0' />
+                    <Post message='Hi22, how are you' likesCount='23' />
                 </div>
             </div>
-        </div>
     );
 };
 
-export default Profile;
+export default MyPosts;
