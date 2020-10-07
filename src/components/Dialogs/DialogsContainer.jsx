@@ -20,6 +20,6 @@ let mapDispatchToProps = (dispatch) => {
     }
 };
 
-const SuperDialogsContainer = adding connect function(mapStateToProps, mapDispatchToProps)(Dialogs);
+const SuperDialogsContainer = connect(mapStateToProps, mapDispatchToProps)(Dialogs);
 
 export default SuperDialogsContainer;
