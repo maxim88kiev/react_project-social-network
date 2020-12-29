@@ -2,10 +2,12 @@ import React from "react";
 import {sendMessageCreator, updateMessageBodyCreator} from "../../redux/dialogs-reducer";
 import Dialogs from "./Dialogs";
 import {connect} from "react-redux";
+import {compose} from "redux";
+import {withAuthRedirect} from "../../hoc/withAuthRedirect";
 
 let mapStateToProps = (state) => {
     return {
-        dialogsPage: state.dialogsPage
+        dialogsPage: state.dialogsPage,
     }
 };
 
@@ -20,6 +22,8 @@ let mapDispatchToProps = (dispatch) => {
     }
 };
 
-const SuperDialogsContainer = connect(mapStateToProps, mapDispatchToProps)(Dialogs);
 
-export default SuperDialogsContainer;
+export default compose(
+    connect(mapStateToProps, mapDispatchToProps),
+    withAuthRedirect
+)(Dialogs);
